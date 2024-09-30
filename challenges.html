@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestMate - Challenges</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="InvestMate Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="news-insights.html">News & Insights</a>
+                <a href="settings.html">Settings</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main class="challenges">
+        <h1>Investment Challenges</h1>
+        <div class="challenge-list">
+            <div class="challenge">
+                <h2>Challenge #1: Stock Picking</h2>
+                <p>Pick the best performing stock for this month.</p>
+                <button onclick="joinChallenge(1)">Join Challenge</button>
+            </div>
+            <div class="challenge">
+                <h2>Challenge #2: Portfolio Growth</h2>
+                <p>Achieve the highest portfolio growth in 30 days.</p>
+                <button onclick="joinChallenge(2)">Join Challenge</button>
+            </div>
+            <div class="challenge">
+                <h2>Challenge #3: Best Investment Strategy</h2>
+                <p>Implement the best investment strategy and win rewards.</p>
+                <button onclick="joinChallenge(3)">Join Challenge</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestMate - Fund Recommender</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="InvestMate Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="news-insights.html">News & Insights</a>
+                <a href="settings.html">Settings</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main class="fund-recommender">
+        <h1>Recommended Funds for You</h1>
+        <div class="fund-list">
+            <div class="fund">
+                <h2>Growth Fund A</h2>
+                <p>High-risk fund with great growth potential.</p>
+                <button onclick="investInFund('Fund A')">Invest</button>
+            </div>
+            <div class="fund">
+                <h2>Balanced Fund B</h2>
+                <p>Balanced approach to risk and return.</p>
+                <button onclick="investInFund('Fund B')">Invest</button>
+            </div>
+            <div class="fund">
+                <h2>Conservative Fund C</h2>
+                <p>Low-risk fund focused on stability.</p>
+                <button onclick="investInFund('Fund C')">Invest</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

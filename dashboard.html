@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestMate - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        header {
+            background-color: #007a8a;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        main.dashboard {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .dashboard-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1 1 calc(100% - 20px);
+            margin-bottom: 15px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 18px;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Media Query for Mobile Devices (320px - 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 10px;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+                font-size: 12px;
+            }
+
+            .logout-btn {
+                margin-top: 10px;
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .dashboard-cards {
+                flex-direction: column;
+            }
+
+            .card {
+                margin-bottom: 10px;
+            }
+
+            .card h2 {
+                font-size: 16px;
+            }
+
+            .chart-container h2 {
+                font-size: 18px;
+            }
+
+            canvas {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="InvestMate Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="news-insights.html">News & Insights</a>
+                <a href="settings.html">Settings</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main class="dashboard">
+        <h1>Welcome, User!</h1>
+        <div class="dashboard-cards">
+            <div class="card" onclick="viewPortfolio()">
+                <h2>Your Portfolio</h2>
+                <p>View your investment portfolio and performance.</p>
+            </div>
+            <div class="card" onclick="viewChallenges()">
+                <h2>Challenges</h2>
+                <p>Participate in exciting investment challenges.</p>
+            </div>
+            <div class="card" onclick="viewNews()">
+                <h2>News & Insights</h2>
+                <p>Stay updated with the latest financial news.</p>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h2>Your Investment Growth</h2>
+            <canvas id="growthChart"></canvas>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        const growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Investment Growth',
+                    data: [10, 20, 30, 25, 35, 50, 70],
+                    borderColor: 'rgba(0, 122, 138, 1)',
+                    backgroundColor: 'rgba(0, 122, 138, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

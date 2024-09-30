@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestMate - Learning Path</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="InvestMate Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="news-insights.html">News & Insights</a>
+                <a href="settings.html">Settings</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main class="learning-path">
+        <h1>Your Learning Path</h1>
+        <div class="course-list">
+            <div class="course">
+                <h2>Basics of Investing</h2>
+                <p>Understand the fundamental concepts of investing.</p>
+                <button onclick="startCourse()">Start Course</button>
+            </div>
+            <div class="course">
+                <h2>Advanced Investment Strategies</h2>
+                <p>Dive deep into advanced investment techniques.</p>
+                <button onclick="startCourse()">Start Course</button>
+            </div>
+            <div class="course">
+                <h2>Market Analysis</h2>
+                <p>Learn how to analyze market trends and make informed decisions.</p>
+                <button onclick="startCourse()">Start Course</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
